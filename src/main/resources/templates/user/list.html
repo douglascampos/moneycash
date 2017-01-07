@@ -1,0 +1,27 @@
+<html xmlns:layout="http://www.thymeleaf.org" xmlns:th="http://www.thymeleaf.org"
+      layout:include="fragments/page :: page(
+      title='Usuarios',
+      header=true,
+      css='user/list'
+      )">
+    <main class="list-users" layout:fragment="content">
+        <h2 class="title">Usuários</h2>
+        <p class="explanation">Escolha uma usuario para ver detalhes ou alterar permissões</p>
+        <table class="im-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Permissões</th>
+                </tr>
+            </thead>
+            <tbody class="users">
+                <tr th:each="user,i : ${users}">
+                    <td th:text="${user.name}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td ></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</html>

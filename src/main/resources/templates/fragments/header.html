@@ -1,0 +1,29 @@
+<div th:fragment="header">
+    <header class="header" >
+        <div class="logo-container">
+            <a href="/"><img alt="logo" src="/assets/images/cash-logo.png" style="width:80px;height:50px;"></a>
+        </div>
+        <navigation class="menu">
+            <div class="dropdown">
+                <p>Dados</p>
+                <nav class="dropdown-content">
+                    <a href="/rates" class="link">Taxas</a>
+                </nav>
+            </div>
+            <!-- <div class="dropdown">
+                <p>Gerencia</p>
+                <nav class="dropdown-content">
+                    <a href="/users" class="link">Usuários do iStoque</a>
+                </nav>
+                <nav class="dropdown-content">
+                    <a href="/settings/change-password" class="link">Alterar senha</a>
+                </nav>
+            </div> -->
+        </navigation>
+        <h1 class="title"><a href="/">MoneyCash</a></h1>
+        <nav class="options">
+            <a href="/settings" class="link">Configurações</a>
+            <a href="/logout" class="link">Sair</a>
+        </nav>
+    </header>
+</div>

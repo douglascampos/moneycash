@@ -1,0 +1,20 @@
+<html xmlns:layout="http://www.thymeleaf.org" xmlns:th="http://www.thymeleaf.org"
+      layout:include="fragments/page :: page(
+      title='Configurações',
+      header=true,
+      css='settings/index',
+      js='settings'
+      )">
+    <main class="settings" layout:fragment="content">
+        <nav class="menu">
+            <ul>
+                <li><a href="/settings/profile" class="item" >Perfil</a></li>
+                <li><a href="/settings/change-password" class="item">Alterar senha</a></li>
+                <li><a href="/users" class="item">Usuários</a>
+            </ul>
+        </nav>
+        <section class="content">
+            
+        </section>
+    </main>
+</html>

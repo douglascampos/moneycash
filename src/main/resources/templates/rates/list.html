@@ -1,0 +1,29 @@
+<html xmlns:layout="http://www.thymeleaf.org" xmlns:th="http://www.thymeleaf.org"
+      layout:include="fragments/page :: page(
+      title='List of Rates',
+      header=true,
+      css='premarket/list',
+      js='premarket'
+      )">
+    <main class="premarket" layout:fragment="content">
+        <h2 class="title">List of Rates</h2>
+        <table class="im-table">
+            <thead>
+                <tr>
+                    <th>Ranking</th>
+                    <th>Nome</th>
+                    <th>TX Mensal (%)</th>
+                    <th>TX Anual (%)</th>
+                </tr>
+            </thead>
+            <tbody class="to-approve">
+                <tr class="premarket-row" th:each="rate,i : ${rates}">
+                    <td class="id" th:text="${rate.position}"></td>
+                    <td class="name" th:text="${rate.name}"></td>
+                    <td th:text="${rate.monthlyInterest}"></td>
+                    <td th:text="${rate.annualInterest}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</html>
