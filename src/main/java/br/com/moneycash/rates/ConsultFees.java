@@ -3,10 +3,14 @@ package br.com.moneycash.rates;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ConsultFees<T> {
+	
+	@Autowired
+	private RatesRepository ratesRepository;
 	
 	 public List<BankRates> getRatesCB() {
 		
@@ -20,5 +24,11 @@ public class ConsultFees<T> {
 		rates.add(rate01);
 		return rates;
 	}
+	 
+	 public void createRate(){
+		 Rate rate = new Rate("CDI", 2016, 12, 1.23);
+	
+		 ratesRepository.save(rate);
+	 }
 
 }

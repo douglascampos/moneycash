@@ -25,5 +25,25 @@
                 </tr>
             </tbody>
         </table>
+    
+        <h2 class="title">List of Rates from database</h2>
+        <table class="im-table">
+            <thead>
+                <tr>
+                    <th>Taxa</th>
+                    <th>Ano</th>
+                    <th>Mês</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody class="to-approve">
+                <tr class="premarket-row" th:each="rate,i : ${allRates}">
+                    <td class="id" th:text="${rate.name}"></td>
+                    <td class="name" th:text="${rate.year}"></td>
+                    <td th:text="${rate.month}"></td>
+                    <td th:text="${rate.tx}"></td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 </html>
