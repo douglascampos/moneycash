@@ -1,4 +1,4 @@
-package br.com.moneycash.category;
+package br.com.moneycash.paymentMethod;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,8 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "category")
-public class Category {
+@Table(name = "payment_methods")
+public class PaymentMethod {
 
 	@Id
 	@GeneratedValue
@@ -20,7 +20,7 @@ public class Category {
 	@Column(name="description", nullable = false, length = 50)
 	private String description;
 
-	public Category(){
+	public PaymentMethod(){
 	}
 	
 	public Long getId() {
