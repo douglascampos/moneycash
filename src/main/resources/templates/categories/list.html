@@ -1,0 +1,26 @@
+<html xmlns:layout="http://www.thymeleaf.org" xmlns:th="http://www.thymeleaf.org"
+      layout:include="fragments/page :: page(
+      title='List of Rates',
+      header=true,
+      css='premarket/list'
+      )">
+    <main class="premarket" layout:fragment="content">
+        <h2 class="title">List Categories</h2>
+        <table class="im-table">
+            <thead>
+                <tr>
+                	<th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Cor</th>
+                </tr>
+            </thead>
+            <tbody class="to-approve">
+                <tr th:each="category,i : ${categories}" th:style="${category.getBackgroundColor()}">
+                    <td class="id" th:text="${category.name}"></td>
+                    <td class="name" th:text="${category.description}"></td>
+                    <td th:text="${category.color}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</html>

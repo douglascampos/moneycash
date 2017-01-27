@@ -1,10 +1,14 @@
 package br.com.moneycash.configuration.expense;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import br.com.moneycash.category.Category;
 
 @Entity
 @Table(name = "expenses")
@@ -22,6 +26,9 @@ public class Expense {
 	
 	@Column(name="type")
 	private Integer method;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Category category;
 	
 	public Expense(){		
 	}
@@ -58,6 +65,14 @@ public class Expense {
 		this.method = type;
 	}
 	
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	
 	public String translateMethod(){
 		if (this.method == 1) {
 			return "Cartão de Débito";
@@ -65,6 +80,10 @@ public class Expense {
 			return "Dinheiro";
 		}
 	}
+	
+//	public String getColor(){
+//		return "background-color:"+ this.category.getColor();
+//	}
 	
 	
 }
