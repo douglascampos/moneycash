@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody class="to-approve">
-                <tr th:each="expense,i : ${expenses}" th:style="${expense.category.getBackgroundColor()}" >
+                <tr th:each="expense,i : ${expenses}" th:style="${ 'background-color:' + expense.category.getBackgroundColor()}" >
                     <td class="id" th:text="${expense.description}"></td>
                     <td class="name" th:text="${expense.value}"></td>
                     <td th:text="${expense.translateMethod()}"></td>

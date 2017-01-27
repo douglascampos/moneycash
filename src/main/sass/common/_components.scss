@@ -69,13 +69,27 @@ $fab-shadow: 4px;
         color: white;
         text-align: center;
         padding: 1.2em 0.3em;
+        font-size: 0.8em;
     }
     
     th {
         background-color: $background-gray;
         color: black;
         font-weight: 500;
-        font-size: 1em;
+        font-size: 0.8em;
         padding: 1em 2em;
     }
+}
+
+@media (min-width: 700px) {
+	.im-table {
+	
+		td {
+			font-size: 1em;	
+		}
+	      
+	    th {
+	        font-size: 1em;
+	    }
+	}
 }

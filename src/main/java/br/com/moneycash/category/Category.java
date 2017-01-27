@@ -52,7 +52,7 @@ public class Category {
 	}
 	
 	public String getBackgroundColor() {
-		return "background-color:" + this.color;
+		return this.color;
 	}
 	
 	
