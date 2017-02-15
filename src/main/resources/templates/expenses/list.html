@@ -11,16 +11,19 @@
                 <tr>
                     <th>Descrição</th>
                     <th>Valor</th>
-                    <th>Tipo</th>
+                    <th>Data</th>
                     <th>Categoria</th>
+                    <th></th>
+                    
                 </tr>
             </thead>
             <tbody class="to-approve">
                 <tr th:each="expense,i : ${expenses}" th:style="${ 'background-color:' + expense.category.getBackgroundColor()}" >
-                    <td class="id" th:text="${expense.description}"></td>
+                    <td class="name" th:text="${expense.description}"></td>
                     <td class="name" th:text="${expense.value}"></td>
-                    <td th:text="${expense.translateMethod()}"></td>
+                    <td th:text="${expense.date}"></td>
                     <td th:text="${expense.category.name}"></td>
+                    <td><img alt="logo" th:src="${'/assets/images/' + expense.iconName() + '.png'}" style="width:20px;height:20px;"></td>
                 </tr>
             </tbody>
         </table>

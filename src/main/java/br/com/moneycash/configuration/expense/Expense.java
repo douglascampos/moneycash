@@ -1,5 +1,7 @@
 package br.com.moneycash.configuration.expense;
 
+import java.sql.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,6 +29,9 @@ public class Expense {
 	@Column(name="type")
 	private Integer method;
 	
+	@Column(name="date")
+	private Date date;
+
 	@OneToOne(cascade = CascadeType.ALL)
 	private Category category;
 	
@@ -73,6 +78,22 @@ public class Expense {
 		this.category = category;
 	}
 	
+	public Date getDate() {
+		return date;
+	}
+	
+	public int getDay() {
+		return date.getDay();
+	}
+	
+	public int getMonth() {
+		return date.getMonth();
+	}
+	
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
 	public String translateMethod(){
 		if (this.method == 1) {
 			return "Cartão de Débito";
@@ -81,9 +102,12 @@ public class Expense {
 		}
 	}
 	
-//	public String getColor(){
-//		return "background-color:"+ this.category.getColor();
-//	}
-	
+	public String iconName() {
+		if (this.method == 1) {
+			return "credit";
+		} else {
+			return "cash";
+		}
+	}
 	
 }
